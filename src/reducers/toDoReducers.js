@@ -8,6 +8,7 @@ const toDoReducers = (state = initialData,action) => {
             case "create": 
                 
                 const {id,data} = action.payload;
+                if(data==="")data.preventDefault();
                 
                 return {
                     ...state,
@@ -22,7 +23,7 @@ const toDoReducers = (state = initialData,action) => {
 
             case "del": 
                 
-                const newList = state.list.filter((elem)=>elem.id !==state.id);
+                const newList = state.list.filter((elem)=>elem.id !==action.id);
                 return{
                     ...state,
                     list:newList

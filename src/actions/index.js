@@ -3,7 +3,7 @@ export const create = (data) => {
 
     return {type: "create",
         payload: {
-            id: new Date().getFullYear().toString(),
+            id: new Date().getTime().toString(),
             data: data
         }
     }
